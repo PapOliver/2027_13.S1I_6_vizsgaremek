@@ -1,0 +1,10 @@
+Specifikáció: Pap Olivér, Csúri Martin, Vízhányó Bence
+Adatbázis szerkezet: Pap Olivér, Csúri Martin
+Algoritmus: Vízhányó Bence
+
+Asztali alkalmazás: Csúri Martin
+Backend: Pap Olivér
+Frontend: Vízhányó Bence
+Szerver: Pap Olivér
+Tesztelés: Vízhányó Bence
+Tesztelés dokumentáció: Vízhányó Bence
