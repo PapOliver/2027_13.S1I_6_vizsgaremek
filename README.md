@@ -8,5 +8,6 @@ Dátumok:
   - Specifikáció: 09.25.
   - Adatszerkezet: 10.30.
   - Algoritmus: 11.06.
+  - Téliszünet előttre egy UI design + egy működő funkció
   - Bemutatás: 01.31.  
   - KÉSZ: 04.07.
