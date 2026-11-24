@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel and Vue.js Integration</title>
+    <title>ZoneControl</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        <random-vue></random-vue>
+        <main-vue></main-vue>
     </div>
 </body>
 <style>
