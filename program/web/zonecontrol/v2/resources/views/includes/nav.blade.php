@@ -10,6 +10,13 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/names">Names</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/names/manage/surname">Surnames</a>
+        </li>
+        
         @auth
         <li class="nav-item ms-lg-auto">
           <a href="/profile" class="nav-link">Profile</a>
