@@ -29,7 +29,7 @@
     <div class="container d-flex align-items-center gap-3 py-3">
         <a class="text-primary text-decoration-none fs-4 me-lg-4" href="/">ZoneControl</a>
         <nav class="text-body-secondary small d-none d-md-flex gap-4"><span class="text-primary fw-semibold">Szállodák</span><span>Kedvenceim</span><span>Foglalásaim</span></nav>
-        <div class="ms-auto d-flex align-items-center gap-3 text-body-secondary small"><span class="d-none d-md-inline">HU · HUF</span><span class="badge rounded-pill bg-body-secondary text-secondary d-none d-sm-inline">U</span><button class="btn btn-outline-secondary btn-sm">Saját fiók</button></div>
+        <div class="ms-auto d-flex align-items-center gap-3 text-body-secondary small"><span class="d-none d-md-inline">HU · HUF</span><span class="badge rounded-pill bg-body-secondary text-secondary d-none d-sm-inline">U</span> <a class="btn btn-outline-secondary btn-sm" href="{{ route('login') }}">Saját fiók</a> </div>
     </div>
 </header>
 
@@ -115,28 +115,29 @@
 </footer>
 
 <script>
-const priceRange=document.getElementById('priceRange');
-const priceValue=document.getElementById('priceValue');
-const cards=[...document.querySelectorAll('.hotel-card')];
-const ratingFilters=[...document.querySelectorAll('.rating-filter')];
-const amenityFilters=[...document.querySelectorAll('.amenity-filter')];
-const status=document.getElementById('filterStatus');
+const priceRange = document.getElementById('priceRange');
+const priceValue = document.getElementById('priceValue');
+const cards = [...document.querySelectorAll('.hotel-card')];
+const ratingFilters = [...document.querySelectorAll('.rating-filter')];
+const amenityFilters = [...document.querySelectorAll('.amenity-filter')];
+const status = document.getElementById('filterStatus');
 
 function applyFilters(){
-    const max=Number(priceRange.value),
-    ratings=ratingFilters.filter(x=>x.checked).map(x=>x.value),
-    amenities=amenityFilters.filter(x=>x.checked).map(x=>x.value);
+    const max = Number(priceRange.value),
+    ratings = ratingFilters.filter(x=>x.checked).map(x=>x.value),
+    amenities = amenityFilters.filter(x=>x.checked).map(x=>x.value);
     let visible=0;
     cards.forEach(card=>{
-        const priceOk=Number(card.dataset.price)<=max;
-        const ratingOk=!ratings.length||ratings.includes(card.dataset.rating);
-        const amenityOk=!amenities.length||amenities.every(x=>card.dataset.amenities.includes(x));
-        const show=priceOk&&ratingOk&&amenityOk;  card.classList.toggle('d-none',!show);if(show)visible++;
+        const priceOk = Number(card.dataset.price)<=max;
+        const ratingOk = !ratings.length||ratings.includes(card.dataset.rating);
+        const amenityOk = !amenities.length||amenities.every(x=>card.dataset.amenities.includes(x));
+        const show = priceOk&&ratingOk&&amenityOk;  card.classList.toggle('d-none',!show);if(show)visible++;
         }
     );
-    priceValue.textContent=max.toLocaleString('hu-HU')+' Ft';
-    status.textContent=visible?visible+' szálloda található a kiválasztott szűrőkkel.':'Nincs találat a megadott szűrőkkel.';
+    priceValue.textContent = max.toLocaleString('hu-HU')+' Ft';
+    status.textContent = visible?visible+' szálloda található a kiválasztott szűrőkkel.':'Nincs találat a megadott szűrőkkel.';
 }
+
 priceRange.addEventListener('input',applyFilters);
 ratingFilters.forEach(x=>x.addEventListener('change',applyFilters));
 amenityFilters.forEach(x=>x.addEventListener('change',applyFilters));
