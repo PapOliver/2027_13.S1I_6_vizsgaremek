@@ -7,9 +7,9 @@
 
     class TestController
     {
-       public function test()
+       public function main()
     {
-        return view('pages.test');
+        return view('pages.main');
     }
             
         /*

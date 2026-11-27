@@ -9,9 +9,7 @@
         return view('welcome');
     }); */
 
-    Route::get('/', [TestController::class, 'test']);
-    //Route::get('/profile', function () { return view('pages.profile'); })->middleware('auth');
+    Route::get('/', [TestController::class, 'main']);
+    Route::get('/profile', function () { return view('pages.profile'); })->middleware('auth');
 
     Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

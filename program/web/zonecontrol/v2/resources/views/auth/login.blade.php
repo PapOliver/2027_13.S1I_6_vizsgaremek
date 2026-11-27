@@ -112,7 +112,7 @@ body {
                                     type="email"
                                     class="form-control py-2 @error('email') is-invalid @enderror"
                                     placeholder="nev@pelda.hu"
-                                    autocomplete="off"
+                                    autocomplete="email"
                                     required
                                     name="email" 
                                     value="{{ old('email') }}"
@@ -136,7 +136,7 @@ body {
                                         class="form-control py-2 @error('password') is-invalid @enderror"
                                         name="password"
                                         placeholder="Add meg a jelszavad"
-                                        autocomplete="off"
+                                        autocomplete="password"
                                         required
                                     >
 
