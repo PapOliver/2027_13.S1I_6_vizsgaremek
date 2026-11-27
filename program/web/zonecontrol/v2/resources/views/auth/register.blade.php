@@ -111,7 +111,7 @@ body {
                                     name = "name"
                                     value="{{ old('name') }}"
                                     placeholder="Add meg a neved"
-                                    autocomplete="off"
+                                    autocomplete="name"
                                     required
                                     autofocus
                                 >
@@ -133,7 +133,7 @@ body {
                                     name="email" 
                                     value="{{ old('email') }}"
                                     placeholder="nev@pelda.hu"
-                                    autocomplete="off"
+                                    autocomplete="email"
                                     required
                                 >
 
@@ -154,7 +154,7 @@ body {
                                         class="form-control py-2 @error('password') is-invalid @enderror"
                                         name="password"
                                         placeholder="Válassz egy jelszót"
-                                        autocomplete="off"
+                                        autocomplete="password"
                                         required
                                     >
 
@@ -179,7 +179,7 @@ body {
                                         class="form-control py-2"
                                         name="password_confirmation"
                                         placeholder="Add meg újra a jelszavad"
-                                        autocomplete="off"
+                                        autocomplete="password-confirm"
                                         required
                                     >
                                     <button class="btn btn-outline-success py-2" type="button" aria-label="Jelszó megjelenítése">Megjelenítés</button>
