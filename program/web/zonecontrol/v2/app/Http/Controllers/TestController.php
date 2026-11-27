@@ -2,8 +2,6 @@
 
     namespace App\Http\Controllers;
     use Illuminate\Http\Request;
-    use App\Models\Name;
-    use App\Models\Family;
     use Exception;
     use Illuminate\Database\QueryException;
 
@@ -11,18 +9,15 @@
     {
        public function test()
     {
-        $names = Name::all();
-        $randomName = $names->isNotEmpty() ? $names->random()->name : 'Nincs elérhető név';
-
-        return view('pages.test', compact('randomName'));
+        return view('pages.test');
     }
             
-
+        /*
         public function names() 
         {
             $names = Name::all();
             $families = Family::all();
-                /* = Name::Find(1);
+                 = Name::Find(1);
                    = Name::where('name', 'Jeff')->get();
                    = Name::where('id', '>', 2)->get();
                 
@@ -31,7 +26,7 @@
                         ->orderBy('id', 'desc')
                         ->get();
 
-                */
+                
             return view('pages.names', compact('names', 'families'));
         }
     
@@ -108,7 +103,7 @@
             return redirect("/names");
         }
 
-        /*
+        
         public function returnObject()
         {
             $obj = new stdClass();

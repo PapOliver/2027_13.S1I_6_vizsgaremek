@@ -107,11 +107,21 @@ body {
                                 <input
                                     id="name"
                                     type="text"
-                                    class="form-control py-2"
+                                    class="form-control py-2 @error('name') is-invalid @enderror"
+                                    name = "name"
+                                    value="{{ old('name') }}"
                                     placeholder="Add meg a neved"
                                     autocomplete="off"
                                     required
+                                    autofocus
                                 >
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
 
                             <div class="mb-3">
@@ -119,11 +129,20 @@ body {
                                 <input
                                     id="email"
                                     type="email"
-                                    class="form-control py-2"
+                                    class="form-control py-2 @error('email') is-invalid @enderror"
+                                    name="email" 
+                                    value="{{ old('email') }}"
                                     placeholder="nev@pelda.hu"
                                     autocomplete="off"
                                     required
                                 >
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
 
                             <div class="mb-3">
@@ -132,11 +151,19 @@ body {
                                     <input
                                         id="password"
                                         type="password"
-                                        class="form-control py-2"
+                                        class="form-control py-2 @error('password') is-invalid @enderror"
+                                        name="password"
                                         placeholder="Válassz egy jelszót"
                                         autocomplete="off"
                                         required
                                     >
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
                                     <button class="btn btn-outline-success py-2" type="button" aria-label="Jelszó megjelenítése">Megjelenítés</button>
                                 </div>
                             </div>
@@ -150,6 +177,7 @@ body {
                                         id="password-confirm"
                                         type="password"
                                         class="form-control py-2"
+                                        name="password_confirmation"
                                         placeholder="Add meg újra a jelszavad"
                                         autocomplete="off"
                                         required

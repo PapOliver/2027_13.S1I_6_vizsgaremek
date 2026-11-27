@@ -104,16 +104,27 @@ body {
                         <p class="mb-4 small text-secondary">Lépj be, és találd meg a következő úti célodat.</p>
 
                         <form action="{{ url('/') }}" method="get">
+                            @csrf
                             <div class="mb-3">
                                 <label for="email" class="form-label small fw-semibold">E-mail-cím</label>
                                 <input
                                     id="email"
                                     type="email"
-                                    class="form-control py-2"
+                                    class="form-control py-2 @error('email') is-invalid @enderror"
                                     placeholder="nev@pelda.hu"
                                     autocomplete="off"
                                     required
+                                    name="email" 
+                                    value="{{ old('email') }}"
+                                    autofocus
                                 >
+
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                             </div>
 
                             <div class="mb-3">
@@ -122,11 +133,19 @@ body {
                                     <input
                                         id="password"
                                         type="password"
-                                        class="form-control py-2"
+                                        class="form-control py-2 @error('password') is-invalid @enderror"
+                                        name="password"
                                         placeholder="Add meg a jelszavad"
                                         autocomplete="off"
                                         required
                                     >
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
                                     <button class="btn btn-outline-success py-2" type="button">Megjelenítés</button>
                                 </div>
                             </div>

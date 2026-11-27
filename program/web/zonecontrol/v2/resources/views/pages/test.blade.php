@@ -28,7 +28,18 @@
 <header class="bg-white border-bottom shadow-sm">
     <div class="container d-flex align-items-center gap-3 py-3">
         <a class="text-primary text-decoration-none fs-4 me-lg-4" href="/">ZoneControl</a>
-        <nav class="text-body-secondary small d-none d-md-flex gap-4"><span class="text-primary fw-semibold">Szállodák</span><span>Kedvenceim</span><span>Foglalásaim</span></nav>
+        <nav class="text-body-secondary small d-none d-md-flex gap-4">
+            <span class="text-primary fw-semibold">Szállodák</span>
+            <span>Kedvenceim</span>
+            <span>Foglalásaim</span>
+            
+            @auth
+            <span>
+            <a href="/profile" class="nav-link">Profile</a>
+            </span>
+            @endauth
+            
+        </nav>
         <div class="ms-auto d-flex align-items-center gap-3 text-body-secondary small"><span class="d-none d-md-inline">HU · HUF</span><span class="badge rounded-pill bg-body-secondary text-secondary d-none d-sm-inline">U</span> <a class="btn btn-outline-secondary btn-sm" href="{{ route('login') }}">Saját fiók</a> </div>
     </div>
 </header>
